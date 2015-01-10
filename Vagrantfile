@@ -67,4 +67,13 @@ Vagrant.configure(2) do |config|
   # config.vm.provision "shell", inline <<-SHELL
   #   sudo apt-get install apache2
   # SHELL
+
+  config.vm.provision "chef_solo" do |chef|
+    chef.add_recipe "java"
+    chef.json = {
+      "java" => {
+          'install_flavor' => 'openjdk'
+      }
+    }
+  end
 end
