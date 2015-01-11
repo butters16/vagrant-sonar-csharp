@@ -77,6 +77,7 @@ Vagrant.configure(2) do |config|
       }
     }
     chef.add_recipe "sonarqube"
+    chef.add_recipe "sonarqube-runner"
     chef.add_recipe "sonarqube-csharp"
   end
 end
